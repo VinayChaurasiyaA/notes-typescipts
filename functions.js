@@ -9,3 +9,26 @@ function login(userid, name, isEmployee) {
 }
 login(2, "vinay"); // 3rd parameter has default value
 console.log(addTwo(2));
+// we can get certain data type too
+function employee(name) {
+    return name;
+}
+// this is how you can have more than 1 return data ty
+function getValue(userid) {
+    if (userid === 1) {
+        return "200 ok";
+    }
+    else {
+        return false;
+    }
+}
+// if you love arrow function
+var getArrowValue = function (userid) {
+    return "vinay";
+};
+// mapping
+var heros = ["spiderman", "antman", "bablu"];
+// below codes from input hero:string can be remove 
+heros.map(function (hero) {
+    return "$\n    {hero} is strong";
+});

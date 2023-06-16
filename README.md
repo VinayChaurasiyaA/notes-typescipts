@@ -17,3 +17,24 @@ Type Inference:
 - like if you want to declare some values like  ``` const userId: number = 1; ``` 
 instead of that even if you use ``` const number = 1 ``` it will work fine and typescript understand that it's a number type of data.
 
+#### In typescript, for function we can even set return data type too. such that we will get exactly we need.
+ - syntax
+``` 
+function hello(name:string):string {
+        return name;
+} 
+```
+
+We can even have return data type of more than 1 type:
+- 
+```
+    function getValue(userid : number): string | boolean {
+    if(userid === 1) {
+        return "200 ok";
+    }
+    else {
+        return false;
+    }
+}
+```
+
