@@ -32,3 +32,13 @@ var heros = ["spiderman", "antman", "bablu"];
 heros.map(function (hero) {
     return "".concat(hero, " is strong");
 });
+// their is a weird syntax for returning a object
+var user = {
+    name: "vinay",
+    age: 10
+};
+var objectReturn = function (_a) {
+    var user = _a.user;
+    return { user: user };
+};
+console.log(objectReturn);

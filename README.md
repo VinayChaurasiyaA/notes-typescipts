@@ -37,4 +37,15 @@ We can even have return data type of more than 1 type:
     }
 }
 ```
+### There is a weird syntax for returing of an object
 
+```
+const user = {
+    name : "vinay",
+    age:10
+}
+const objectReturn= ({user}):{}=>{
+    return {user}
+}
+console.log(objectReturn)
+```

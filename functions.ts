@@ -1,3 +1,4 @@
+// https://www.typescriptlang.org/docs/handbook/2/objects.html
 function addTwo(num: number) {
     return 2+num;
 }
@@ -30,4 +31,13 @@ const heros:string[] = ["spiderman" , "antman" , "bablu"];
 heros.map((hero:string): string => {
     return `${hero} is strong`
 })
+// their is a weird syntax for returning a object
+const user = {
+    name : "vinay",
+    age:10
+}
+const objectReturn= ({user}):{}=>{
+    return {user}
+}
+console.log(objectReturn)
 export {} 
