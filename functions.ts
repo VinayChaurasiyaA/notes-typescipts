@@ -28,7 +28,6 @@ const heros:string[] = ["spiderman" , "antman" , "bablu"];
 
 // below codes from input hero:string can be remove 
 heros.map((hero:string): string => {
-    return `$
-    {hero} is strong`
+    return `${hero} is strong`
 })
 export {} 

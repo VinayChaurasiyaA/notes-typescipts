@@ -30,5 +30,5 @@ var getArrowValue = function (userid) {
 var heros = ["spiderman", "antman", "bablu"];
 // below codes from input hero:string can be remove 
 heros.map(function (hero) {
-    return "$\n    {hero} is strong";
+    return "".concat(hero, " is strong");
 });
