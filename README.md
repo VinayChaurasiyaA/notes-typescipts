@@ -53,3 +53,14 @@ console.log(objectReturn)
 ### Type Alias:
 type is used to make your own data type, like as we don't know which type of data an object will be called so we will use, 
 ```  type objectname = {object} ```
+eg..
+```
+type user = {
+    name : string,
+    age : number
+}
+ 
+function userDetails(users:user):user {
+    return {name:"vinay" , age:10}
+} 
+```

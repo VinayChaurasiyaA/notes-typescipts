@@ -40,12 +40,34 @@ const objectReturn= ({user}):{}=>{
     return {user}
 }
 console.log(objectReturn)
-
+// this is alias : type
 type user = {
     name : string,
     age : number
 }
+ 
+function userDetails(users:user):user {
+    return {name:"vinay" , age:10}
+}
+// readonly type of things where you can't change anything you can just read
+type user1 = {
+    readonly _id : string[],
+    readonly age : number,
+    name : string
+}
+let myUser : user1 = {
+    _id : ["1"],
+    name : "vinay",
+    age : 10
+}
+myUser.name = "rajan";
+myUser._id.push("2");
+// myUser.age = 10; // this will give error
 
-} 
+function creatinguser(user : user1) {
+    return user;
+}
+console.log(myUser);
+
+
 export {} 
-function userDetails(users:user) {

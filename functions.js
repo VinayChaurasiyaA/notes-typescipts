@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+// https://www.typescriptlang.org/docs/handbook/2/objects.html
 function addTwo(num) {
     return 2 + num;
 }
@@ -42,3 +43,18 @@ var objectReturn = function (_a) {
     return { user: user };
 };
 console.log(objectReturn);
+function userDetails(users) {
+    return { name: "vinay", age: 10 };
+}
+var myUser = {
+    _id: ["1"],
+    name: "vinay",
+    age: 10
+};
+myUser.name = "rajan";
+myUser._id.push("2");
+// myUser.age = 10; // this will give error
+function creatinguser(user) {
+    return user;
+}
+console.log(myUser);
