@@ -40,4 +40,12 @@ const objectReturn= ({user}):{}=>{
     return {user}
 }
 console.log(objectReturn)
+
+type user = {
+    name : string,
+    age : number
+}
+
+} 
 export {} 
+function userDetails(users:user) {
