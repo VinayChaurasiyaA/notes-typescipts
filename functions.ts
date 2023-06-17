@@ -69,5 +69,20 @@ function creatinguser(user : user1) {
 }
 console.log(myUser);
 
+// & is used for combining two or more types
+type cardNumber = {
+    cardNumber : number
+}
+type cardHolder = {
+    cardHolder : string
+}
+type cardDetails  = cardNumber & cardHolder & {
+    cvv : number
+}
+const card : cardDetails = {
+    cardNumber : 123456789,
+    cardHolder : "vinay",
+    cvv : 123
+}
 
 export {} 

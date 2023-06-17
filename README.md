@@ -64,3 +64,48 @@ function userDetails(users:user):user {
     return {name:"vinay" , age:10}
 } 
 ```
+#### readonly is used to just read the data, but if the data is in array form then it can be appended to the new 
+```
+type user1 = {
+    readonly _id : string[],
+    readonly age : number,
+    name : string
+}
+let myUser : user1 = {
+    _id : ["1"],
+    name : "vinay",
+    age : 10
+}
+myUser.name = "rajan";
+myUser._id.push("2");
+// myUser.age = 10; // this will give error
+
+```
+
+### "&" 
+is used for combining two or more data types
+```
+type cardNumber = {
+    cardNumber : number
+}
+type cardHolder = {
+    cardHolder : string
+}
+type cardDetails  = cardNumber & cardHolder & {
+    cvv : number
+}
+const card : cardDetails = {
+    cardNumber : 123456789,
+    cardHolder : "vinay",
+    cvv : 123
+}
+```
+#### Arrays declaration, there are 2 types of array declaration either we can write datatype[] or we can write, Array<"datatype"> both works the same
+
+eg.
+```
+const heroName : string[]= [];// this is one way of declaring of an array
+const heroName1 : Array<string> = []; // this is another, both works the same
+heroName.push("superman")
+heroName1.push("batman");
+```
