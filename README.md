@@ -28,7 +28,7 @@ function hello(name:string):string {
 We can even have return data type of more than 1 type:
 - 
 ```
-    function getValue(userid : number): string | boolean {
+function getValue(userid : number): string | boolean {
     if(userid === 1) {
         return "200 ok";
     }
@@ -108,4 +108,24 @@ const heroName : string[]= [];// this is one way of declaring of an array
 const heroName1 : Array<string> = []; // this is another, both works the same
 heroName.push("superman")
 heroName1.push("batman");
+```
+
+####  union has like a OR operator, it can be either string or number (there can be more than 2 data type , where string and number are just an example).
+ - Union and cominations(&) can be used in functions as well. But the issue arrises is that if the input is string or number then how can we use it's inbuilt functions.It can be solved by checking it's
+
+ ``` typeof(inuput) ```
+ ```
+ function getUserData(input : string | number): string  | number {
+    if(typeof input === "string" ) {
+        return "200 ok" + input.toLowerCase();
+    }
+    else {
+        return 200 + input.toFixed();
+    }
+}
+ ```
+```
+var score: string | number = 10;
+score = "hey nice one";
+console.log(score); 
 ```
