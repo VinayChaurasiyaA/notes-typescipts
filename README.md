@@ -129,3 +129,54 @@ var score: string | number = 10;
 score = "hey nice one";
 console.log(score); 
 ```
+#### unions in array.
+- unionialising the 2 or more than 2 types of array data type can be possible in the typescript
+``` 
+    datatype1[] | datatype2[]
+```
+   
+```
+ (datatype1 | datatype2)[]
+```
+
+a possible example for this senario is:
+```
+var arr : (string | number)[] = ["vinay", 2, "kumar", 3];
+console.log(arr);
+var newArr : string[] | number[] = ["vinay" , "kumar"];
+newArr  = [2 , 3];
+```
+#### string[] | number[] it means that either whole array can be just string array or just number array, but not both
+#### (string | number)[] it means that each element in the array can be either string or number
+
+### Enums ( enums)
+enums exits when you have to restrict somebodys choices for eg on e-commerce website you can limit the things to show or in plane booking system where their are 3-4 types of booking, aisle, middle and window so at the end user has 3-4 choices only
+```
+enum aeroplaneChoice {
+  Aisle,
+  Middle,
+  Window,
+}
+/// now you can use this enum in your code
+const seatSelection = aeroplaneChoice[0]; // this will give the value of the index
+const seatSelection1 = aeroplaneChoice.Aisle; // this will give index or default value pair
+
+console.log(seatSelection); // this will print 0 as it takes default value pair 0
+
+```
+If we will use enum like this, the generated js file will be all messed up so it's always recommended to use ``` const enum ```
+
+#### Interface
+An interface is a way to define the structure and shape of an object temporarly more like a class. 
+syntax
+ ``` 
+    interface name {
+        // eg. name : string
+    } 
+ ```
+whereas in **type** it has different synatax
+```
+type name = {
+    // eg. name : string
+}
+```

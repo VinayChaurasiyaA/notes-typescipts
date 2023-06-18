@@ -33,4 +33,8 @@ function getUserData(input : string | number): string  | number {
 }
 console.log(getUserData(2));
 
+// unionializing an array is also possible
+var arr : (string | number)[] = ["vinay", 2, "kumar", 3];
+// string[] | number[] it means that either whole array can be just string array or just number array, but not both
+// (string | number)[] it means that each element in the array can be either string or number
 export {}; // this is to avoid the error of redeclaration of block scoped variable
