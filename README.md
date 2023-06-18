@@ -168,6 +168,7 @@ If we will use enum like this, the generated js file will be all messed up so it
 
 #### Interface
 An interface is a way to define the structure and shape of an object temporarly more like a class. 
+Interface provides the reopening of the interface, which means you can add new properties just by declaring and adding manually
 syntax
  ``` 
     interface name {
@@ -179,4 +180,28 @@ whereas in **type** it has different synatax
 type name = {
     // eg. name : string
 }
+```
+```
+interface user1 {
+  name: string;
+  age: number;
+  googleId: string;
+  fun(): string;
+}
+
+// added manually
+// now you remember that you have to add one more property to the user1 interface
+// but you forgot to add it to the vinay1 object
+interface user1 {
+  role: string;
+}
+const vinay1: user1 = {
+  name: "vinay",
+  age: 21,
+  googleId: "vinay",
+  fun() {
+    return "hi";
+  },
+  role: "admin",
+};
 ```
