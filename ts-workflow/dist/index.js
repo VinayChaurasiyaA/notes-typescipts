@@ -3,7 +3,8 @@ class User {
     // whereas we could even use constructor to do the same thing, constructor(public name : string , public email : string , public city : string)
     constructor(name, email, city) {
         // the above method to make public and assign the data type is what typescript documnetation says
-        this._courseCount = 1;
+        //   private _courseCount: number = 1;
+        this._courseCount = 1; // this provides the functionality of having this class and which ever classes will inherit it, those will get protected values too.
         this.name = name;
         this.email = email;
         this.city = city;
@@ -20,6 +21,15 @@ class User {
             throw new Error("Invalid course count");
         }
         this._courseCount = count;
+    }
+}
+class subUser extends User {
+    constructor() {
+        super(...arguments);
+        this.isFamily = true;
+    }
+    changeCourseCount() {
+        this._courseCount += 1;
     }
 }
 const vinay = new User("vinay", "v@gmail.com", "bangalore");
