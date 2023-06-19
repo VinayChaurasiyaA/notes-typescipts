@@ -308,9 +308,7 @@ and to setup a output directory which comes after compiling ts file to js file i
 
 ```
 
-1. Class
-   // todo
-
+1. Class: class is a blueprint of an object, it's a way to create an object with some properties and functionalities.
 ```
 class className {
     // it's properties
@@ -319,8 +317,7 @@ class className {
 }
 ```
 
-2. Public/private/protected(acces modifier) key
-   // todo
+2. Public/private/protected(acces modifier) key : public is by default, private is used when you don't want to access it outside the class, protected is used when you want to access it in the child class.
 
 ```
 public name: string;
@@ -332,8 +329,7 @@ public name: string;
 
 ```
 
-3. Getter/Setters
-   // todo
+3. Getter/Setters: getter is used to get the value of the private property and setter is used to set the value of the private property.
 
 ```
     get courseCount(): number {
@@ -347,8 +343,7 @@ public name: string;
     }
 ```
 
-4. Abstract class:
-   // todo
+4. Abstract class: abstract class is used when you want to have a class which can be inherited by other class but you don't want to create it's object.
 
 ```
 abstract class photoClicks {
@@ -379,4 +374,34 @@ class snapChat extends photoClicks {
 function identityOne<lol>(val : lol) : lol {
     return val;
 }
+
+parametric generic:
+```
+function parameterGeneric<T, U>(valOne: T, valTwo: U): object {
+  return {
+    valOne,
+    valTwo,
+  };
+}
+const outputTwo = parameterGeneric("vinay", 2);
+```
+```
+Class in generic: a class can also be generic, it can be used to make a cart of any type of data
+```
+class generic<T> {
+  // public cart : T[] = [];
+  constructor(public cart: T[]) {
+    this.cart = cart;
+  }
+  addToCart(item: T) {
+    this.cart.push(item);
+  }
+  displayCart() : T[]{
+    return this.cart
+  }
+}
+const cartOne = new generic<string>(["mango", "banana"]);
+cartOne.addToCart("apple");
+const display = cartOne.displayCart();
+console.log(display);
 ```

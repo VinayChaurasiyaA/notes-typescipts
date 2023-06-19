@@ -22,6 +22,12 @@ class Youtube {
         aperture = "f1.0";
         filter = "monochrome";
     }
+    getImage() {
+        throw new Error("Method not implemented.");
+    }
+    calculateStoryTime(input) {
+        throw new Error("Method not implemented.");
+    }
     createStory() {
         console.log("youtube also has story creation feature lmaoo");
     }
