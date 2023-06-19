@@ -241,6 +241,52 @@ const vinay1: user1 = {
 };
 ```
 
+### Interface implementations:
+
+```
+interface photoClicks {
+  cameraMode: string;
+  aperture: string;
+  filter: string;
+}
+// interface is like a structural body which anyone can use it just by making a call implements and then it can have a structure like it
+
+// you can implement more than 1 interface just by "," and interface name.. eg
+interface story {
+  createStory(): void;
+}
+
+class Instagram implements photoClicks {
+  // if we implement something in our class, that class atleast contains all the properties and you can add others too (add ons)
+  constructor(
+    public cameraMode: string,
+    public aperture: string,
+    public filter: string,
+    public likes: number // this is newly added
+  ) {
+    cameraMode = "pro";
+    aperture = "f1.0";
+    filter = "monochrome";
+    likes = 10;
+  }
+}
+class Youtube implements photoClicks, story {
+  constructor(
+    public cameraMode: string,
+    public aperture: string,
+    public filter: string
+  ) {
+    cameraMode = "pro";
+    aperture = "f1.0";
+    filter = "monochrome";
+  }
+  createStory(): void {
+    console.log("youtube also has story creation feature lmaoo");
+  }
+}
+
+```
+
 ## Object generosity
 
 Intially we have to run the below command to have a tscconfig.json file to have a watch mode
@@ -273,7 +319,7 @@ class className {
 }
 ```
 
-2. Public/private key
+2. Public/private/protected(acces modifier) key
    // todo
 
 ```
@@ -282,6 +328,8 @@ public name: string;
   public city?: string;
 
   private _courseCount : number = 1;
+  protected _age : number = 10;
+
 ```
 
 3. Getter/Setters
@@ -297,4 +345,34 @@ public name: string;
         }
         this._courseCount = count;
     }
+```
+
+4. Abstract class:
+   // todo
+
+```
+abstract class photoClicks {
+  constructor(public camera: string, public filter: string) {}
+  abstract getImage(): string;
+  // if any function is marked as abstract then you cannot have implementations inside the abstract class
+
+  calculateStoryTime(input: string): number {
+    return parseFloat(input) * 2;
+  }
+}
+// as soon as you will make a class abstract you won't be able to create its object you have to reintialise them in another class by implementing it
+class snapChat extends photoClicks {
+  constructor(public camera: string, public filter: string) {
+    super(camera, filter);
+  }
+  getImage(): string {
+    return "101011";
+  }
+}
+```
+
+5. Generics
+
+```
+
 ```
