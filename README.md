@@ -372,7 +372,11 @@ class snapChat extends photoClicks {
 ```
 
 5. Generics
+: generics are used if the type of the argument is not known and we want to return the same type of argument
+
 
 ```
-
+function identityOne<lol>(val : lol) : lol {
+    return val;
+}
 ```
